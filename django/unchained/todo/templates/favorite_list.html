@@ -1,0 +1,8 @@
+<h1> Favorit manga</h1>
+<ul>
+    {% for favorite in favorites %}
+    <li>
+        <a href="{% url 'manga_detail' favorite.manga.id %}">{{ favorite.manga.title }}</a>
+    </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if todos %}
+    <u>
+        {% for todo in todos %}
+            <dt>{{todo.name}}</dt>
+            <p>
+                {%if todo.done%}
+                    done
+                {%else%}
+                    Doing
+                {%endif%}
+            </p>
+        {% endfor %}
+    </u>
+
+{% else %}
+    <p> axaxaxaxaxaxax </p>
+
+{% endif %}
+
+{% endblock %}

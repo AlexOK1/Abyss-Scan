@@ -1,0 +1,10 @@
+<h1>Manga Liste</h1>
+<div>
+    <div>
+        {% for manga in manga %}
+        <img src="{{ manga.cover_image.url }}" alt="{{ manga.title }}">
+        <h2><a href="{% url 'manga_detail' manga.id %}">{{ manga.title }}</a></h2>
+        <p>{{ manga.genre }}</p>
+    </div>
+    {% endfor %}
+</div>

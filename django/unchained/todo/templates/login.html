@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2>Login</h2>
+        
+        <!-- log ind  -->
+        <form method="POST">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        
+        <p> Ingen konto? <a href="{% url 'signup' %}"> Opret konto </a></p>
+    </div>
+    
+{% endblock %}

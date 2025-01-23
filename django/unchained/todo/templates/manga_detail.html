@@ -1,0 +1,13 @@
+<h1>{{ manga.title }}</h1>
+<img src="{{ manga.cover_image.url }}" alt="{{ manga.title }}">
+<p>{{ manga.description }}</p>
+<p>Genre: {{ manga.genre }}</p>
+{% if user.is_authenticated %}
+    {% if is_favorited %}
+        <a href="{% url 'unfavorite_manga' manga.id %}">Remove from Favorites</a>
+    {% else %}
+        <a href="{% url 'favorite_manga' manga.id %}">Add to Favorites</a>
+    {% endif %}
+{% else %}
+    <p><a href="{% url 'login' %}">Log in to favorite this manga</a></p>
+{% endif %}
